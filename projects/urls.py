@@ -1,8 +1,7 @@
-from rest_framework import routers
-from .api import ProjectViewSet
+from rest_framework.routers import DefaultRouter
+from .views import ProjectViewSet
 
-router = routers.DefaultRouter()
-
-router.register('api/projects', ProjectViewSet, 'projects')
+router = DefaultRouter()
+router.register(r'projects', ProjectViewSet, basename='project')
 
 urlpatterns = router.urls
